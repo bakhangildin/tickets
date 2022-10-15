@@ -1,0 +1,4 @@
+.MyTickets {
+    padding: var(--padding);
+    width: calc(100vw-250px);
+}

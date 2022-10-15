@@ -1,0 +1,69 @@
+.SearchFlight {
+    padding: var(--padding);
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.SearchForm {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 30px;
+    flex-wrap: wrap;
+}
+
+.Select {
+    width: 180px;
+    height: 40px;
+    text-align: center;
+    background-color: var(--light-blue);
+    border: 0;
+    outline: none;
+    border-radius: 10px;
+}
+
+.Select:hover {
+    filter: brightness(0.9);
+}
+
+.Select:focus {
+    outline: 2px solid var(--dark-blue);
+}
+
+.Button {
+    width: 180px;
+    height: 40px;
+    text-align: center;
+    background-color: var(--dark-blue);
+    border: 0;
+    outline: none;
+    border-radius: 10px;
+    color: var(--white);
+}
+
+.Button:focus {
+    outline: 2px solid var(--light-blue);
+}
+
+.Button:hover {
+    filter: brightness(0.9);
+}
+
+.VerticalLayout {
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    gap: 15px;
+}
+
+.SearchResults {
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    gap: 15px;
+}
+
+.Plane {
+    width: inherit;
+}
