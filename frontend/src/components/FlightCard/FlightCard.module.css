@@ -1,43 +1,36 @@
 .FlightCard {
-    width: 800px;
-    background-color: var(--light-blue);
-    border-radius: 10px;
-    padding: var(--padding);
-    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+  width: 90%;
+  background-color: var(--light-blue);
+  border-radius: 10px;
+  padding: var(--padding);
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+  transition: 130ms ease-out 130ms;
 }
-
 .FlightCard:hover {
-    filter: brightness(0.9);
+  background-color: var(--dark-blue);
+}
+.FlightCard hr {
+  width: 0;
+  height: 19px;
+  border: 0.5px solid var(--black);
+  margin: 0 10px;
 }
 
-.Info {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    gap: 35px;
-    padding: var(--padding);
-}
-
-.Info p {
-    font-size: medium;
+.HorizontalLayout {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: start;
+  gap: 15px;
+  padding: var(--padding);
 }
 
 .Button {
-    width: 180px;
-    height: 40px;
-    text-align: center;
-    background-color: var(--dark-blue);
-    border: 0;
-    outline: none;
-    border-radius: 10px;
-    color: var(--white);
-    margin-left: auto;
+  padding: 4px var(--padding);
+  border: 0;
+  border-radius: 5px;
+  transition: 130ms ease-out 130ms;
 }
-
 .Button:hover {
-    filter: brightness(0.9);
-}
-
-.Button:active {
-    outline: 1px solid var(--black);
-}
+  filter: brightness(0.8);
+}/*# sourceMappingURL=FlightCard.module.css.map */

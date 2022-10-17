@@ -8,4 +8,4 @@ class SearchResult:
     fromCity: str
     toCity: str
     date: datetime
-    price: int
+    minPrice: int

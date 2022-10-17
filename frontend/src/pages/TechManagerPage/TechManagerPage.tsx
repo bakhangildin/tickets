@@ -1,8 +1,13 @@
 import { Component } from "solid-js";
+import styles from "./TechManagerPage.module.css"
 
-const TechManagerPage: Component<{}> = (props) => {
+type TechManagerPageProps = {};
 
-    return <div>TechManagerPage</div>;
+const TechManagerPage: Component<TechManagerPageProps> = (props) => {
+
+  return <div class={styles.TechManagerPage}>
+    TechManagerPage
+  </div>;
 };
 
 export default TechManagerPage;

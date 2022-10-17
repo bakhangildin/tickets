@@ -1,16 +1,13 @@
 import { Component } from "solid-js";
-import styles from "./MyTickets.module.css";
+import styles from "./MyTickets.module.css"
 
-type MyTicketsProps = {
-    text?: string
-}
+type MyTicketsProps = {};
 
 const MyTickets: Component<MyTicketsProps> = (props) => {
-
-    return <div class={styles.MyTickets}>
-        {/* Got {props.text} */}
-        MyTickets Component
-    </div>;
+  
+  return <div class={styles.MyTickets}>
+    MyTickets
+  </div>;
 };
 
 export default MyTickets;

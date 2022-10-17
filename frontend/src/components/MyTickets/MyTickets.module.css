@@ -1,4 +1,7 @@
 .MyTickets {
-    padding: var(--padding);
-    width: calc(100vw-250px);
-}
+  padding: var(--padding);
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  font-size: medium;
+}/*# sourceMappingURL=MyTickets.module.css.map */

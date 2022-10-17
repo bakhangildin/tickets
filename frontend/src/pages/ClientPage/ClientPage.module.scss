@@ -1,0 +1,33 @@
+.ClientPage {
+    display: flex;
+    flex-direction: row;
+    width: 100vw;
+    height: 100vh;
+}
+
+.LeftMenu {
+    min-width: 250px;
+    height: 100vh;
+    box-shadow: 5px 0px 30px rgba(0, 0, 0, 0.15);
+    display: flex;
+    flex-direction: column;
+    justify-content: left;
+}
+
+.MenuItem {
+    color: var(--black);
+    font-size: large;
+    text-align: left;
+    user-select: none;
+    cursor: pointer;
+    padding: var(--padding);
+    transition: background-color 130ms ease-out 150ms;
+
+    &:hover {
+        background-color: rgba(0, 0, 0, 0.15);
+    }
+}
+
+.selected {
+    color: var(--dark-blue);
+}

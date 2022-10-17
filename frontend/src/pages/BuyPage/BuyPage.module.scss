@@ -1,0 +1,21 @@
+.BuyPage {
+    padding: var(--padding);
+    width: 100vw;
+    height: 100vh;
+}
+
+.HorizontalLayout {
+    display: flex;
+    flex-direction: row;
+    justify-content: start;
+    align-items: center;
+    gap: 15px
+}
+
+.VerticalLayout {
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    align-items: flex-start;
+    gap: 15px
+}

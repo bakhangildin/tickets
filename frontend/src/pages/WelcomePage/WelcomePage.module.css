@@ -1,37 +1,24 @@
-h1 {
-    text-align: center;
-    user-select: none;
-    font-size: 50px;
-}
-
 .WelcomePage {
-    width: 100vw;
-    height: 100vh;
-    display: flex;
-    flex-direction: column;
-    row-gap: 30px;
-    justify-content: center;
-    align-items: center;
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
 }
 
-
-.button {
-    text-decoration: none;
-    text-align: center;
-    vertical-align: middle;
-    width: 450px;
-    height: 90px;
-    border-radius: 30px;
-    background-color: var(--dark-blue);
-    font-size: 30px;
+.Button {
+  padding: 1rem;
+  background-color: var(--light-blue);
+  border-radius: 1rem;
+  width: 30vw;
+  text-align: center;
+  text-decoration: none;
 }
-
-.button span {
-    color: var(--white);
-    position: relative;
-    top: 27.5px;
+.Button span {
+  color: white;
 }
-
-.button:hover {
-    filter: brightness(0.85);
-}
+.Button:hover {
+  background-color: var(--dark-blue);
+}/*# sourceMappingURL=WelcomePage.module.css.map */

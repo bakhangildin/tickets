@@ -1,35 +1,38 @@
 import { Component } from "solid-js";
-import styles from "./FlightCard.module.css";
+import { apiUrls } from "../../api/api";
+import styles from "./FlightCard.module.css"
 
 type FlightCardProps = {
-    id: number
-    fromCity: string,
-    toCity: string,
-    date: string,
-    price: number
+  id: number
+  fromCity: string,
+  toCity: string,
+  date: string,
+  minPrice: number
 }
+
 
 const formatDate = (dateString: string) => {
-    const date = new Date(dateString);
-    return date.toLocaleString("ru");
+  const date = new Date(dateString);
+  return date.toLocaleString("ru").slice(0, -3);
 }
-
 const FlightCard: Component<FlightCardProps> = (props) => {
-    const handleClick = (event: MouseEvent) => {
-        event.preventDefault();
-        console.log(`Clicked on `, props.id);
-    }
+  const buy = (event: MouseEvent) => {
+    event.preventDefault();
+    console.log(`Clicked on`, props.id);
+    window.open(apiUrls.flightInfo + "/" + props.id.toString());
+  }
 
-    return <div class={styles.FlightCard} onclick={handleClick}>
-        <div class={styles.Info}>
-            <p>{props.fromCity} &mdash; {props.toCity}</p>
-            <p>{formatDate(props.date)}</p>
-            <p>{props.price} &#8381;</p>
-
-            <button class={styles.Button}>Купить</button>
-        </div>
-
-    </div>;
+  return <div class={styles.FlightCard}>
+    <div class={styles.HorizontalLayout}>
+      <p>{props.fromCity} &mdash; {props.toCity}</p>
+      <hr />
+      <p>{formatDate(props.date)}</p>
+      <hr />
+      <p>от {props.minPrice} &#8381;</p>
+      <hr />
+      <button class={styles.Button} onClick={buy}>Купить</button>
+    </div>
+  </div>;
 };
 
 export default FlightCard;
