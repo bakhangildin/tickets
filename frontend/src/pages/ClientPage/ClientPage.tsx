@@ -18,6 +18,12 @@ class MenuItem {
 }
 
 const ClientPage: Component<ClientPageProps> = (props) => {
+  const isLogin = window.localStorage.getItem("isLogin");
+  if (isLogin != "true") {
+    window.location.href = "login";
+    window.localStorage.setItem("isLogin", "process");
+  }
+
   const [tabIndex, setTabIndex] = createSignal(0);
 
   const tabClick = (event: MouseEvent) => {

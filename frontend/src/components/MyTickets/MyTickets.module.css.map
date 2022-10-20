@@ -1,1 +1,1 @@
-{"version":3,"sources":["MyTickets.module.scss","MyTickets.module.css"],"names":[],"mappings":"AAAA;EACI,uBAAA;EACA,aAAA;EACA,sBAAA;EACA,SAAA;EACA,iBAAA;ACCJ","file":"MyTickets.module.css"}
+{"version":3,"sources":["MyTickets.module.scss","MyTickets.module.css"],"names":[],"mappings":"AAAA;EACI,uBAAA;EACA,aAAA;EACA,sBAAA;EACA,SAAA;EACA,iBAAA;ACCJ;;ADEA;EACI,6BAAA;EACA,uBAAA;EACA,6BAAA;EACA,mBAAA;ACCJ;ADCI;EACI,uBAAA;ACCR","file":"MyTickets.module.css"}

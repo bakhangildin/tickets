@@ -30,7 +30,7 @@
     border: 0;
     outline: none;
     border-radius: 10px;
-    transition: 130ms ease-out 130ms;
+    transition: 300ms;
 
     &:hover {
         filter: brightness(0.9);
@@ -47,7 +47,7 @@
     padding: var(--padding);
     border: 1px solid var(--light-blue);
     border-radius: 10px;
-    transition: 130ms ease-out 150ms;
+    transition: 300ms;
 
     &:hover {
         filter: brightness(0.9);
@@ -68,6 +68,8 @@
     outline: none;
     border-radius: 10px;
     color: #FFFFFF;
+    transition: 300ms ease-in-out;
+
 
     &:hover {
         filter: brightness(0.9);

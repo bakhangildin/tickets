@@ -18,4 +18,39 @@
   justify-content: start;
   align-items: flex-start;
   gap: 15px;
+}
+
+.Card {
+  width: 700px;
+  padding: var(--padding);
+  border-radius: 15px;
+  background-color: var(--light-blue);
+  transition: 300ms ease-in-out;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.Card:hover {
+  filter: brightness(0.9);
+}
+
+.Button {
+  width: 180px;
+  height: 40px;
+  text-align: center;
+  background-color: var(--dark-blue);
+  border: 0;
+  outline: none;
+  border-radius: 10px;
+  color: #FFFFFF;
+}
+.Button:hover {
+  filter: brightness(0.9);
+}
+.Button:focus {
+  outline: 2px solid var(--light-blue);
+}
+
+.Radio {
+  height: 15px;
 }/*# sourceMappingURL=BuyPage.module.css.map */

@@ -4,4 +4,14 @@
   flex-direction: column;
   gap: 15px;
   font-size: medium;
+}
+
+.Ticket {
+  background: var(--light-blue);
+  padding: var(--padding);
+  transition: 300ms ease-in-out;
+  border-radius: 10px;
+}
+.Ticket:hover {
+  filter: brightness(0.9);
 }/*# sourceMappingURL=MyTickets.module.css.map */

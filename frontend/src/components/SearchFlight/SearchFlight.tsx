@@ -1,7 +1,7 @@
 import { Component, createSignal, For } from "solid-js";
 import styles from "./SearchFlight.module.css"
 
-import { apiUrls } from "../../api/api";
+import { apiUrls } from "../../utils/api";
 import axios from "axios";
 import plane from "../../assets/plane4.svg"
 import FlightCard from "../FlightCard/FlightCard";
@@ -13,11 +13,12 @@ type citiesResponse = {
 	cities: string[]
 }
 
-type FlightCardProps = {
+export type FlightCardProps = {
 	id: number
 	fromCity: string,
 	toCity: string,
-	date: string,
+	departure: string,
+	arrival: string,
 	minPrice: number
 }
 
@@ -26,11 +27,11 @@ type SearchResults = {
 }
 
 
-const toOption = (option: string) => {
+export const toOption = (option: string) => {
 	return <option value={option}>{option}</option>
 }
 
-const formatDate = (date: Date) => {
+export const formatDate = (date: Date) => {
 	const s = date.toLocaleDateString("ru").split(".")
 	return `${s[2]}-${s[1]}-${s[0]}`
 }
@@ -54,18 +55,29 @@ const SearchFlight: Component<SearchFlightProps> = (props) => {
 	const [results, setResults] = createSignal<FlightCardProps[]>([]);
 	const search = (event: SubmitEvent) => {
 		document.getElementById("error-message")?.remove();
+		document.getElementById("notfound-message")?.remove();
 		event.preventDefault();
 		const form = new FormData(event.target as HTMLFormElement);
 		if (form.get("fromCity") == form.get("toCity")) {
 			const err = document.createElement("p");
 			err.id = "error-message"
 			err.style.color = "#CC0000";
+			err.style.fontSize = "12px";
 			err.innerText = "Неверный выбор городов"
 			document.getElementById("submit")?.appendChild(err);
 			return;
 		}
 		axios.postForm<SearchResults>(apiUrls.baseUrl + apiUrls.search, form).then(response => {
 			setResults(prev => response.data.results)
+			if (results().length == 0) {
+				const err = document.createElement("p");
+				err.id = "notfound-message"
+				err.style.color = "#CC0000";
+				err.style.fontSize = "12px";
+				err.innerText = "Ничего не нашлось"
+				document.getElementById("submit")?.appendChild(err);
+				return;
+			}
 		})
 	}
 
@@ -95,7 +107,7 @@ const SearchFlight: Component<SearchFlightProps> = (props) => {
 			</div>
 			<div class={styles.VerticalLayout}>
 				<label for="price">Максимальная цена</label>
-				<input type="number" name="price" id="price" class={styles.Input} placeholder="10 000 ₽" min="0" max="1000000" step="1000" />
+				<input type="number" name="price" id="price" class={styles.Input} placeholder="10 000 ₽" min="0" max="1000000" />
 			</div>
 			<div class={styles.VerticalLayout}>
 				<br />
@@ -108,7 +120,6 @@ const SearchFlight: Component<SearchFlightProps> = (props) => {
 		}>
 			{(item, index) => <div data-index={index()}>{
 				FlightCard(item)
-
 			}</div>}
 		</For>
 	</div>;

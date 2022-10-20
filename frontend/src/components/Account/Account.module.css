@@ -4,4 +4,32 @@
   flex-direction: column;
   gap: 15px;
   font-size: medium;
+}
+
+.Data {
+  background: var(--light-blue);
+  padding: var(--padding);
+  transition: 300ms ease-in-out;
+  border-radius: 15px;
+}
+.Data:hover {
+  filter: brightness(0.9);
+}
+
+.Button {
+  width: 180px;
+  height: 40px;
+  text-align: center;
+  background-color: var(--dark-blue);
+  border: 0;
+  outline: none;
+  border-radius: 10px;
+  color: #FFFFFF;
+  transition: 300ms ease-in-out;
+}
+.Button:hover {
+  filter: brightness(0.9);
+}
+.Button:focus {
+  outline: 2px solid var(--light-blue);
 }/*# sourceMappingURL=Account.module.css.map */
