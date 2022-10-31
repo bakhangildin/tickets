@@ -13,16 +13,6 @@ db = mysql.connector.connect(
 
 cursor = db.cursor()
 
-a = cursor.callproc("SELECT_FLIGHTS", args=(
-    "moskow", "irkutsk", None, None, None))
-# results = [r.fetchall() for r in cursor.stored_results()]
-
-# try:
-#     cursor.callproc("add_customer", ("M", "Олег", "Евсютин",
-#                                      None, None, "1983-01-02", "372hd"))
-# except DatabaseError as e:
-# print(e.msg)
-
 
 def select_cities():
     cursor.execute("select name from cities")
@@ -64,12 +54,8 @@ def my_tickets(id_):
     cursor.callproc("tickets_of_passenger", (id_,))
     results = []
     tmp = [r.fetchall() for r in cursor.stored_results()]
-    columns = ["price", "sit_row", "sit_number", "name", "BC_ST", "luggage_weight",
-               "hand_luggage", "departure", "arrival", "city_to", "city_from"]
     for row in tmp[0]:
-        results.append(
-            Ticket(*row)
-        )
+        results.append(Ticket(*row))
     return results
 
 

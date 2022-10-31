@@ -1,0 +1,39 @@
+.LoginPage {
+  width: 100vw;
+  height: 100vh;
+  font-size: large;
+}
+
+.HorizontalLayout {
+  display: flex;
+  flex-direction: row;
+  justify-content: start;
+  align-items: center;
+  gap: var(--gap);
+}
+
+.VerticalLayout {
+  display: flex;
+  flex-direction: column;
+  justify-content: start;
+  align-items: flex-start;
+  gap: var(--gap);
+}
+
+.Center {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 15px;
+  height: 100vh;
+}
+
+input,
+button {
+  width: 150px;
+  height: 30px;
+  padding: 0 var(--padding);
+  border: 1px solid var(--black);
+  border-radius: 5px;
+}/*# sourceMappingURL=LoginPage.module.css.map */

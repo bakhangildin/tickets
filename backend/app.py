@@ -120,7 +120,9 @@ def account():
 @app.route(API.seatTypes.value, methods=["POST"])
 def seat_types():
     id_ = int(request.json.get("id"))
-    return make_response(db.seat_types(id_))
+    res = db.seat_types(id_)
+    print(res)
+    return make_response(res)
 
 
 @app.route(API.avaliablePlaces.value, methods=["POST"])
